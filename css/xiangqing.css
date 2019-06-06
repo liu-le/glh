@@ -40,10 +40,9 @@ header .rt{width:140px;height:38px;background:f9f9f9;;margin:22px 12px 0 40px;te
 header .rt span{line-height:38px;cursor:pointer;}
 header .rt span i{margin:0 2px}
 
-
 main .margin{border:1px solid #eee;}
 main .margin .cont{width:1200px;display:flex;text-align:center;padding:20px 0 ;flex-wrap: wrap;justify-content: space-between;background:#eee}
-main .margin .cont .box{margin:20px 2px;height:380px}
+main .margin .cont .box{margin:20px 2px;height:380px;border-bottom:1px solid #434a99 }
 main .margin .cont .box img{width:286px;height:286px}
 main .margin .cont .box p{font:12px/2 "";color:#434a99}
 main .margin .cont .box span{font:18px/50px "";color:#e22a40}

@@ -2,60 +2,72 @@
     "src":"../images/a1.jpg",
     "name":"【特价推荐】十五月圆高端水果礼盒【全国通用】",
     "price":"￥998.00",
+    "prce":"￥928.00",
     "goodsId":"123132"
 },{
     "src":"../images/a1.png",
     "name":"【推荐】四季如春中秋高端水果礼盒",
     "price":"￥579.00",
+    "prce":"￥519.00",
     "goodsId":"asmjg-dasjg"
 },{
     "src":"../images/a2.png",
     "name":"豪情万粽高端水果礼盒",
     "price":"￥129.00",
+    "prce":"￥100.00",
     "goodsId":"1l4213"
 },{
     "src":"../images/a3.png",
     "name":"【预售】端午情缘高端水果礼盒",
     "price":"￥998.00",
+    "prce":"￥946.00",
     "goodsId":"dfhgd"
 },{
     "src":"../images/t2.jpg",
     "name":"一帆风顺水果礼盒提货券",
     "price":"￥599.00",
+    "prce":"￥449.00",
     "goodsId":"ty1ut"
 },{
     "src":"../images/t3.jpg",
     "name":"【特价推荐】十五月圆高端水果礼盒【全国通用】",
     "price":"￥999.00",
+    "prce":"￥866.00",
     "goodsId":"123-132"
 },{
     "src":"../images/a4.jpg",
     "name":"【推荐】四季如春中秋高端水果礼盒",
     "price":"￥599.00",
+    "prce":"￥399.00",
     "goodsId":"asmj-gdasjg"
 },{
     "src":"../images/a6.jpg",
     "name":"豪情万粽高端水果礼盒",
     "price":"￥199.00",
+    "prce":"￥120.00",
     "goodsId":"1-24213"
 },{
     "src":"../images/t8.jpg",
     "name":"【预售】端午情缘高端水果礼盒",
     "price":"￥998.00",
+    "prce":"￥899.00",
     "goodsId":"df-h1d"
 },{
     "src":"../images/t16.jpg",
     "name":"一帆风顺水果礼盒提货券",
     "price":"￥579.00",
+    "prce":"￥512.00",
     "goodsId":"tyut"},
     {
     "src":"../images/t18.jpg",
     "name":"【预售】端午情缘高端水果礼盒",
     "price":"￥998.00",
+    "prce":"￥899.00",
     "goodsId":"dfh-gd"
     },{
         "src":"../images/ta.jpg",
         "name":"一帆风顺水果礼盒提货券",
         "price":"￥579.00",
+        "prce":"￥516.00",
         "goodsId":"ty-ut"}
 ]

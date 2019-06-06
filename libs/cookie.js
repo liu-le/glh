@@ -27,4 +27,5 @@ function getCookie(key){
             return arr[i].split("=")[1];
         }
     }
+    return ""
 }

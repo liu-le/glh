@@ -150,50 +150,8 @@
 
     </nav>
     <section id="details">
-        <div class="datu">
-            <span></span>
-            <img src="../images/a1.jpg" alt="" class="sma">
-        </div>
-        <div class="big">
-            <img src="../images/a1.jpg" alt="" class="str">
-        </div>
-        <div class="guige">
-            <h1>端午情缘高端水果礼盒</h1>
-            <div class="jiage">
-                <p>
-                    <span class="scj">市场价：</span>
-                    <del class="scjg">￥380.00</del>
-                    元
-                </p>
-                <p>
-                    <span class="ygj">优个价：</span>
-                    <span class="money">￥</span>
-                    <span class="jg">368</span>
-                </p>
-            </div>
-            <div class="cont">
-                <div class="xuanze">
-                    <div class="laxian">礼盒款式：</div>
-                    <div class="xz">
-                        <select name="" id="choice">
-                            <option value="">请选择礼盒样式</option>
-                            <option value="339">官方标准款式</option>
-                            <option value="340">端午情缘高端水果礼盒</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="shuliang">
-                    <div class="slname">数量：</div>
-                    <div class="zengjian">
-                        <a href="" class="jianshao">-</a>
-                        <input type="text" id="num" value="1" maxlength="999">
-                        <a href="" class="zengjia">+</a>
-                    </div>
-                </div>
-            </div>
-            <div class="goumai">             
-            </div>
-        </div>
+        
+     </div>
     </section>
     <div id="footerbg">
         <div class="margin footer">
@@ -417,16 +375,76 @@
                         style="color: rgb(92, 113, 158);">Shop</b><b style="color: rgb(243, 144, 0);">Ex</b></a>
             </div>
         </div>
-
+        
         <div class="wx_fix" id="footfd"></div>
-
+        
     </div>
-
+    
 </body>
+<script src="../libs/ajax.2.0.js"></script>
+<script src="../libs/cookie.js"></script>
+
 <script>
+    class Xq {
+        constructor() {
+            this.det= document.querySelector("#details");
+            // console.log(this.det)
+            this.url = "http://localhost:81/guolehui/data/detaile.json";
+            this.init();
+        }
+        init() {
+            var that = this;
+            ajax({
+                url: this.url,
+                success: function (res) {
+                    that.res = JSON.parse(res)
+                    that.getCookie()
+                }
+            })
+        }
+        getCookie() {
+            this.goods = JSON.parse(getCookie("details"));
+            this.display();
+        }
+        display() {
+            var str = "";
+            for (var i = 0; i < this.res.length; i++) {
+                for (var j = 0; j < this.goods.length; j++) {
+                    if (this.res[i].goodsId == this.goods[j].id){
+                        str += `<div index="${this.goods[j].id}">
+                                    <div class="datu">
+                                        <span></span>
+                                        <img src="${this.res[i].src}" class="sma">
+                                    </div>
+                                    <div class="big">
+                                        <img src="${this.res[i].src}" class="str">
+                                    </div>
+                                    <div class="buttom">
+                                        <p><i>商品名称</i>：${this.res[i].name}</p>
+                                        <p><i>商品价格</i>：${this.res[i].price}</p>
+                                        <p><i>会员价格</i>：${this.res[i].prce}</p>
+                                        <div class="bgm">
+                                            <p><i>数量</i>：<input type="number" value="1" min=1></p>
+                                            <button><span class="add">添加购物车</span></button>
+                                        </div>
+                                    </div>
+                                </div>`
+                    }
+                }
+            }
+                this.det.innerHTML = str;
+                new Big();
+        }
+       
+        
+    }
+
+    new Xq();
+
     class Big{
         constructor(){
             this.sl=document.querySelector('.datu');
+            console.log(this.sl)
             this.span=document.querySelector(".datu span");
             this.sm=document.querySelector('.datu sma');
             this.bg=document.querySelector('.big');
@@ -449,38 +467,30 @@
             this.span.style.display="block";
             this.bm.style.display="block";
         }
-         
+            
         move(eve){
-            var e= eve || window.event;
-            var l=e.pageX -240-this.span.offsetWidth*0.5
-            var t=e.pageY-236-this.span.offsetHeight*0.5
-            // console.log(l,t);
-            if(l<0) l=0;
-            if(t<0) t=0;
-            if(l>this.bg.offsetWidth-this.span.offsetWidth) l=this.bg.offsetWidth-this.span.offsetWidth;
-            if(t>this.bg.offsetHeight-this.span.offsetHeight) t=this.bg.offsetHeight-this.span.offsetHeight;
-            this.span.style.left=l+"px";
-            this.span.style.top=t+"px";
-            var rateX = l/(this.bg.offsetWidth-this.span.offsetWidth);
-            var rateY = t/(this.bg.offsetWidth-this.span.offsetWidth);
-            console.log( rateY )
-            this.bm.style.left=-rateX*(this.bm.offsetWidth-this.bg.offsetWidth)+"px";
-            this.bm.style.top=-rateY*(this.bm.offsetHeight-this.bg.offsetHeight)+"px";
-console.log( this.bm.style.top, this.bm.style.left )
-        }
+                var e= eve || window.event;
+                var l=e.pageX -240-this.span.offsetWidth*0.5
+                var t=e.pageY-236-this.span.offsetHeight*0.5
+                // console.log(l,t);
+                if(l<0) l=0;
+                if(t<0) t=0;
+                if(l>this.bg.offsetWidth-this.span.offsetWidth) l=this.bg.offsetWidth-this.span.offsetWidth;
+                if(t>this.bg.offsetHeight-this.span.offsetHeight) t=this.bg.offsetHeight-this.span.offsetHeight;
+                this.span.style.left=l+"px";
+                this.span.style.top=t+"px";
+                var rateX = l/(this.bg.offsetWidth-this.span.offsetWidth);
+                var rateY = t/(this.bg.offsetWidth-this.span.offsetWidth);
+                // console.log( rateY )
+                this.bm.style.left=-rateX*(this.bm.offsetWidth-this.bg.offsetWidth)+"px";
+                this.bm.style.top=-rateY*(this.bm.offsetHeight-this.bg.offsetHeight)+"px";
+            // console.log( this.bm.style.top, this.bm.style.left )
+            }
         hide(){
             this.span.style.display="none";
             this.bm.style.display="none";
         }
-
-
-
-     }
-       
-    
-
-
-    new Big();
-</script>
-
+        }
+  
+    </script>
 </html>

@@ -69,47 +69,28 @@ nav .clear>div~a .hh{position: absolute;background:url(../images/h.png) no-repea
 
 
 
-#details{ width:1200px; margin: 0 auto;overflow: hidden;margin-top:20px;padding-top:50px; padding-bottom: 30px;border-top:1px solid #ccc;position: relative;height:600px;border-bottom:2px solid #999}
+#details{ width:1200px; margin: 0 auto;overflow: hidden;margin-top:20px;padding-top:50px; padding-bottom: 30px;border-top:1px solid #ccc;position: relative;height:500px;border-bottom:2px solid #999}
 #details .datu{width:250px;border: 1px solid #dbdbdb;position:absolute;left:80px}
-#details .datu span{width:50px;height:35px;background:rgba(225,225, 225, .6);#8a8a8a;position:absolute;display:none}
+#details .datu span{width:50px;height:35px;background:rgba(225,225, 225, .6);;position:absolute;display:none}
 #details .datu img{border:0;width:250px;height:250px;}
 #details .big{width:250px;height:250px;position: absolute;top:50px;right:550px;background: #c2c2c2;overflow: hidden;}
 #details .big img{width:1000px;height:1000px;display: none;position:absolute}
-#details .guige{width:520px;position:absolute;left:80px;top:340px}
-#details .guige h1{font-size: 16px;font-family: "微软雅黑";color: #494949;}
+#details .buttom{position: absolute;top:350px;left:150px;font:900 18px/35px "";}
+#details .buttom i{color:#d36d29;font:900 20px/35px "";}
 
-#details .guige .jiage{color: #999; margin-top: 5px;position: relative;padding: 5px 0 20px 10px;background: #f1f1f1;margin-left: -10px;width:400px}
-#details .guige .jiage p{}
-#details .guige .jiage p .money{font-size: 16px;font-weight: bold;color:#d51938;}
-#details .guige .jiage p .jg{    font-weight: bold;
-    font-size: 21px;
-    margin: 0px 0px 0px -3px;color:#d51938;}
+#details .buttom .bgm{display: flex;flex-direction:column;width:220px}
+#details .buttom .bgm p{display:flex; align-items:center}
+#details .buttom .bgm p input{border:0px solid #0f0f0f;width:68px;height:25px;text-align: center;font:900 18px/35px ;display: block}
+#details .buttom .bgm button{background:#aedb20;border-radius:10px;border:0;color:yellow;font:900 20px/35px "";padding:6px 15px;justify-items: }
 
 
 
-#details .guige .cont{margin: 10px 0; color: #707070;}
-#details .guige .cont .xuanze{width: 240px;float: left; margin-right: 30px;}
-#details .guige .cont .xuanze .laxian{float: left;color:#575757;
-  font:700 14px/32px "";color:#666666;}
-#details .guige .cont .xuanze .xz{ color:#666666;display: inline;float: left;position: relative;width: 170px}
-#details .guige .cont .xuanze .xz select{border: 1px solid #c9c9c9;padding: 5px;}
 
 
-#details .guige .cont .shuliang{width:180px;float: left;}
-#details .guige .cont .shuliang .slname{float:left;color: #575757;line-height: 26px;}
-#details .guige .cont .shuliang .zengjian{width: 120px;float: left;display: inline;}
-#details .guige .cont .shuliang .zengjian .jianshao{    border: 1px solid #dbdbdb; color: #8a8a8a; width: 22px;height: 26px;
-line-height: 26px;float: left;text-align: center;cursor: pointer;
-display: inline-block;text-decoration: none;}
-#details .guige .cont .shuliang .zengjian .zengjia{    border: 1px solid #dbdbdb; color: #8a8a8a; width: 22px;
-height: 26px;line-height: 26px;float: left;text-align: center;
-cursor: pointer;display: inline-block; text-decoration: none;}
-#details .guige .cont .shuliang .zengjian #num{    border-color: #dbdbdb; border-style: solid;border-width: 1px; background-color: #ffffff; width: 50px; height: 26px;
-float: left;text-align: center;display: inline-block;margin: 0 5px;}
 
-#details .guige .goumai{height: 40px; float: left;margin-top: 30px;overflow: hidden;}
-#details .guige .goumai #incar{margin-right: 25px; display: inline-block;float: left; cursor: pointer;}
-#details .guige .goumai #buynow{margin-right: 25px;display: inline-block;float: left;cursor: pointer;}
+
+
+
 #footerbg{border-bottom:1px solid #e7e7e7} 
 #footerbg .foota{float:left;margin:25px 50px 20px 18px;
 font:12px/28px "";color:#333333;}
