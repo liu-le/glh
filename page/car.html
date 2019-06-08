@@ -414,15 +414,19 @@
 </body>
 <script src="../libs/ajax.2.0.js"></script>
 <script src="../libs/cookie.js"></script>
+<script src="../libs/jquery.js"></script>
 <script>
     class Car {
         constructor() {
             this.tbody = document.querySelector("tbody");
             this.url = "http://localhost:81/guolehui/data/goods.json";
             this.press = document.querySelector(".press")
-            console.log(this.press)
+            this.down = document.querySelector(".down")
+            // this.remember=document.querySelector("#remember")
+          
+            console.log(this.down)
             // D1.绑定span的点击事件
-            this.addEvent();
+          
             this.clear()
             // 请求所有数据
             this.init();
@@ -445,18 +449,25 @@
             this.goods = JSON.parse(getCookie("shangpin"));
           
             this.display();
+            this.remember=document.querySelector("td #remember");
+            this.jg=document.querySelector(".adm .jg");
+            this.shu=document.querySelector("td .shu");
+            console.log(this.remember);
+            console.log(this.jg);
+            console.log(this.shu);
+            this.addEvent();
         }
         display() {
             var str = "";
             for (var i = 0; i < this.res.length; i++) {
                 for (var j = 0; j < this.goods.length; j++) {
                     if (this.res[i].goodsId == this.goods[j].id){
-                        str += `<tr index="${this.goods[j].id}">
-                                    <td><input type="checkbox" class></td>
+                        str += `<tr index="${this.goods[j].id}" class="adm">
+                                    <td><input type="checkbox" id="remember"></td>
                                     <td><img src="${this.res[i].src}"></td>
                                     <td>${this.res[i].name}</td>
-                                    <td>${this.res[i].price}</td>
-                                    <td><input type="number" value="${this.goods[j].num}" min=1></td>
+                                    <td class="jg">${this.res[i].price}</td>
+                                    <td><input type="number" value="${this.goods[j].num}" min=1 class="shu"></td>
                                     <td><span class="delete">删除</span></td>
                                 </tr>`
                     }
@@ -467,6 +478,7 @@
         addEvent() {
             var that = this;   
             this.tbody.addEventListener("click", function (eve) {
+                var eve = eve || window.event;
                 if (eve.target.className == "delete") {                
                     that.id = eve.target.parentNode.parentNode.getAttribute("index");                
                     eve.target.parentNode.parentNode.remove()               
@@ -483,6 +495,31 @@
                     })
                 }
             })
+            this.remember.onclick = function(){
+                if(that.remember.checked){
+                    // for(){}
+                    console.log(this.jg .value)
+                  var money=  this.jg .value*this.shu.value;  
+                  console.log(money)        
+                }else{
+                    console.log(22);
+                   
+                }
+            }
+
+            // $(function(){
+            //     var s = $("input[name='check']");
+            //     s.each(function(i) {
+            //         alert(i);
+            //             $(this).click(function(){
+            //                 if(this.checked==true){
+            //                     alert(this.value);
+            //                 }
+            //             });
+            //         }); 
+            // })
+
+
         }
         changeCookie(callback) {
             for (var i = 0; i < this.goods.length; i++) {
